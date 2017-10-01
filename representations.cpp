@@ -17,7 +17,7 @@ int main() {
   AM[t - 1][s - 1] = 1; // <-
   
   // adjacency list
-  vvi AL(N);
+  vvii AL(N);
   L[s - 1].push_back(make_pair(w, t - 1)); // ->
   L[t - 1].push_back(make_pair(w, s - 1)); // <-
   
