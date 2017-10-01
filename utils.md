@@ -16,6 +16,7 @@ fill(a.begin(), a.end(), 0); // [0, 0, 0, 0, 0]
 C++11 `to_string()` polyfill 
 
 ```c++
+#include <sstream>
 template <typename T>
 string to_string(T n) {
   ostringstream oss;
