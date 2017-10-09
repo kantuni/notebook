@@ -62,3 +62,10 @@ a.resize(4, 'a'); // aaba
 int a[2][2] = {{1, 2}, {3, 4}};
 ```
 
+---
+
+```c++
+int islower (int c);
+```
+
+Checks whether *c* is a lowercase letter.
