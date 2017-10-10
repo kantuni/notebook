@@ -8,10 +8,10 @@ Assigns `val` to all the elements in the range `[first,last)`.
 
 ```c++
 vector<int> a = {1, 2, 3, 4, 5};
-fill(a.begin(), a.end(), 0); // [0, 0, 0, 0, 0]
+fill(a.begin(), a.end(), 0); // [0, 0, 0, 0, 0] (doesn't return a)
 ```
 
----
+
 
 C++11 `to_string()` polyfill 
 
@@ -25,7 +25,7 @@ string to_string(T n) {
 }
 ```
 
----
+
 
 ```c++
 string substr (size_t pos = 0, size_t len = npos) const;
@@ -38,7 +38,7 @@ string a = "aabbcc";
 string b = a.substr(0, 3); // aab
 ```
 
----
+
 
 ```c++
 void resize (size_t n, char c);
@@ -53,19 +53,53 @@ If *n* is greater than the current string length, the current content is extende
 ```c++
 string a = "aabbcc";
 a.resize(3); // aab
-a.resize(4, 'a'); // aaba
+a.resize(4, 'a'); // aaba (doesn't return a)
 ```
 
----
+
 
 ```c++
 int a[2][2] = {{1, 2}, {3, 4}};
 ```
 
----
+Declares and initializes a 2D array.
+
+
 
 ```c++
 int islower (int c);
 ```
 
 Checks whether *c* is a lowercase letter.
+
+
+
+```c++
+pair<T1,T2> make_pair (T1 x, T2 y);
+```
+
+Constructs a pair object with its first element set to x and its second element set to y.
+
+```c++
+#include <utility> // std::pair
+pair<int, int> foo;
+foo = make_pair(10, 20);
+foo.first = 1;
+foo.second = 2;
+```
+
+
+
+```c++
+void reverse (BidirectionalIterator first, BidirectionalIterator last);
+```
+
+Reverses the order of the elements in the range `[first,last)`.
+
+``` c++
+#include <string>
+#include <algorithm> // std::reverse
+string a = "123abc";
+reverse(a.begin(), a.end()); // a = cba321 (doesn't return a)
+```
+
