@@ -6,8 +6,6 @@ Insert an element into a map.
 #include <map>
 #include <utility> // std::pair
 map<char, int> tree;
-tree['a'] = 100; 
-// or
-tree.insert( pair<char, int>('a', 100) );
+tree['a'] = 100; // or tree.insert( pair<char, int>('a', 100) );
 ```
 
