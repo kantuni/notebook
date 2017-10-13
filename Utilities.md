@@ -171,26 +171,8 @@ v.erase(v.begin() + 1, v.begin() + 4); // [1, 5]
 
 
 ```c++
-set<int> s = {1, 2};
-vector<int> v = {4, 5};
-
-s.insert(3); // {1, 2, 3}
-s.insert(v.begin(), v.end()); // {1, 2, 3, 4, 5}
-
-s.erase(1); // {2, 3, 4, 5}
-s.erase(s.find(2), s.find(4)); // {4, 5}
-
-s.count(element); // either 1 or 0
-s.find(element); // either an iterator to that element or s.end()
-```
-
-Set operations: insert, erase, count, find, etc.
-
-
-
-```c++
 #include <algorithm>
-vector<int> v = {1, 2, 3, 4, 5}; // must be sorted
+vector<int> v = {1, 2, 3, 4, 5}; // must be sorted to get all the permutations
 do {
   // ...
 } while (next_permutation(v.begin(), v.end()));
