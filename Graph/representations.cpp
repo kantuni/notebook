@@ -18,8 +18,8 @@ int main() {
   
   // adjacency list
   vvii AL(N);
-  L[s - 1].push_back(make_pair(w, t - 1)); // ->
-  L[t - 1].push_back(make_pair(w, s - 1)); // <-
+  AL[s - 1].push_back(make_pair(w, t - 1)); // ->
+  AL[t - 1].push_back(make_pair(w, s - 1)); // <-
   
   // edge list
   vii EL;

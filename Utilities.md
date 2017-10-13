@@ -113,3 +113,15 @@ vvi A(n, vi(m, 0));
 ```
 
 Creates an `n x m` matrix with all 0s.
+
+
+
+```c++
+char a = '3';
+int b = a - '0'; // b = 3
+```
+
+Converts `char` to `int`
+
+
+
