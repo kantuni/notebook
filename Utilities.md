@@ -8,7 +8,7 @@ Assigns `val` to all the elements in the range `[first,last)`.
 
 ```c++
 vector<int> a = {1, 2, 3, 4, 5};
-fill(a.begin(), a.end(), 0); // [0, 0, 0, 0, 0] (doesn't return a)
+fill(a.begin(), a.end(), 0); // [0, 0, 0, 0, 0]
 ```
 
 
@@ -53,7 +53,7 @@ If *n* is greater than the current string length, the current content is extende
 ```c++
 string a = "aabbcc";
 a.resize(3); // aab
-a.resize(4, 'a'); // aaba (doesn't return a)
+a.resize(4, 'a'); // aaba
 ```
 
 
@@ -97,10 +97,9 @@ void reverse (BidirectionalIterator first, BidirectionalIterator last);
 Reverses the order of the elements in the range `[first,last)`.
 
 ``` c++
-#include <string>
 #include <algorithm> // std::reverse
 string a = "123abc";
-reverse(a.begin(), a.end()); // a = cba321 (doesn't return a)
+reverse(a.begin(), a.end()); // a = cba321
 ```
 
 
@@ -122,6 +121,35 @@ int b = a - '0'; // b = 3
 ```
 
 Converts `char` to `int`
+
+
+
+```c++
+vector<int> a = {3, 1, 2, 5, 4};
+sort(a.begin(), a.end()); // [1, 2, 3, 4, 5]
+sort(a.rbegin(), a.rend()); // [5, 4, 3, 2, 1]
+```
+
+Sorts the container in increasing / decreasing order.
+
+
+
+```c++
+iterator insert (iterator position, const value_type& val); // single element
+void insert (iterator position, size_type n, const value_type& val); // fill
+template <class InputIterator> void insert (iterator position, InputIterator first, InputIterator last); // range
+```
+
+The vector is extended by inserting new elements before the element at the specified *position*, effectively increasing the container size by the number of elements inserted.
+
+```c++
+vector<int> a = {1, 2, 3};
+a.insert(1, 4); // [1, 4, 2, 3]
+
+// use this for multiple inserts
+vector<int> b = {4, 5};
+a.insert(1, b.begin(), b.end()); // [1, 4, 5, 2, 3]
+```
 
 
 
