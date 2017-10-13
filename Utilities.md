@@ -188,3 +188,13 @@ Set operations: insert, erase, count, find, etc.
 
 
 
+```c++
+#include <algorithm>
+vector<int> v = {1, 2, 3, 4, 5}; // must be sorted
+do {
+  // ...
+} while (next_permutation(v.begin(), v.end()));
+```
+
+Rearranges the elements in the range `[first,last)` into the next *lexicographically greater* permutation.
+
