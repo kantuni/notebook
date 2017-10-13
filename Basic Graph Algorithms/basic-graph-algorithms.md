@@ -104,3 +104,26 @@ for (int i = 0; i < V; i++) {
 }
 ```
 
+### Topological Sort (Directed Acyclic Graph)
+
+```c++
+vi ts;
+void dfsm(int u) {
+  color[u] = VISITED;
+  for (int j = 0; j < AdjList[u].size(); j++) {
+    ii v = AdjList[u][j];
+    if (color[v.second] == UNVISITED) {
+      color[v.second] = VISITED;
+      dfs(v.second);
+    }
+  }
+  ts.push_back(u);
+}
+
+for (int i = 0; i < 4; i++)
+    if (color[i] == UNVISITED)
+      dfs(i);
+
+reverse(all(ts));
+```
+
