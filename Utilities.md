@@ -7,8 +7,8 @@ void fill (ForwardIterator first, ForwardIterator last, const T& val);
 Assigns `val` to all the elements in the range `[first,last)`.
 
 ```c++
-vector<int> a = {1, 2, 3, 4, 5};
-fill(a.begin(), a.end(), 0); // [0, 0, 0, 0, 0]
+vector<int> v = {1, 2, 3, 4, 5};
+fill(v.begin(), v.end(), 0); // [0, 0, 0, 0, 0]
 ```
 
 
@@ -108,7 +108,7 @@ reverse(a.begin(), a.end()); // a = cba321
 #include <vector>
 typedef vector<int> vi;
 typedef vector<vi> vvi;
-vvi A(n, vi(m, 0));
+vvi G(n, vi(m, 0));
 ```
 
 Creates an `n x m` matrix with all 0s.
@@ -125,9 +125,9 @@ Converts `char` to `int`
 
 
 ```c++
-vector<int> a = {3, 1, 2, 5, 4};
-sort(a.begin(), a.end()); // [1, 2, 3, 4, 5]
-sort(a.rbegin(), a.rend()); // [5, 4, 3, 2, 1]
+vector<int> v = {3, 1, 2, 5, 4};
+sort(v.begin(), v.end()); // [1, 2, 3, 4, 5]
+sort(v.rbegin(), v.rend()); // [5, 4, 3, 2, 1]
 ```
 
 Sorts the container in increasing / decreasing order.
@@ -143,13 +143,48 @@ template <class InputIterator> void insert (iterator position, InputIterator fir
 The vector is extended by inserting new elements before the element at the specified *position*, effectively increasing the container size by the number of elements inserted.
 
 ```c++
-vector<int> a = {1, 2, 3};
-a.insert(1, 4); // [1, 4, 2, 3]
+vector<int> v = {1, 2, 3};
+v.insert(v.begin() + 1, 4); // [1, 4, 2, 3]
 
 // use this for multiple inserts
-vector<int> b = {4, 5};
-a.insert(1, b.begin(), b.end()); // [1, 4, 5, 2, 3]
+vector<int> w = {4, 5};
+v.insert(v.begin() + 1, w.begin(), w.end()); // [1, 4, 5, 2, 3]
 ```
+
+
+
+```c++
+iterator erase (iterator position);
+iterator erase (iterator first, iterator last);
+```
+
+Removes from the vector either a single element (*position*) or a range of elements (`[first,last)`).
+
+```c++
+vector<int> v = {1, 2, 3, 4, 5};
+v.erase(v.begin() + 1); // [1, 3, 4, 5]
+
+// use this for multiple removals
+v.erase(v.begin() + 1, v.begin() + 4); // [1, 5]
+```
+
+
+
+```c++
+set<int> s = {1, 2};
+vector<int> v = {4, 5};
+
+s.insert(3); // {1, 2, 3}
+s.insert(v.begin(), v.end()); // {1, 2, 3, 4, 5}
+
+s.erase(1); // {2, 3, 4, 5}
+s.erase(s.find(2), s.find(4)); // {4, 5}
+
+s.count(element); // either 1 or 0
+s.find(element); // either an iterator to that element or s.end()
+```
+
+Set operations: insert, erase, count, find, etc.
 
 
 
