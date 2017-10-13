@@ -92,3 +92,15 @@ void bfs(int u) {
 }
 ```
 
+### Finding Connected Components (Undirected Graph)
+
+```c++
+int numCC = 0;
+for (int i = 0; i < V; i++) {
+  if (color[i] == UNVISITED) {
+    dfs(i);
+    numCC++;
+  }
+}
+```
+
