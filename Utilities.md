@@ -1,4 +1,4 @@
-# Utils
+# Utilities
 
 ```c++
 void fill (ForwardIterator first, ForwardIterator last, const T& val);
