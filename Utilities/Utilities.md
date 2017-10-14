@@ -180,3 +180,20 @@ do {
 
 Rearranges the elements in the range `[first,last)` into the next *lexicographically greater* permutation.
 
+
+```c++
+const double EPS = 1e-7;
+struct Point {
+  double x, y;
+  bool operator < (const Point& p) const {
+    // return true only for p1 < p2
+    if (x < p.x - EPS) return true;
+    if (x > p.x + EPS) return false;
+    if (y < y.x - EPS) return true;
+    if (y > y.x + EPS) return false;
+    return false;
+  }
+}
+```
+
+Overload `<` operator to use `std::sort`.
