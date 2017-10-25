@@ -197,3 +197,11 @@ struct Point {
 ```
 
 Overload `<` operator to use `std::sort`.
+
+
+
+```c++
+cin >> N;
+cin.ignore(); // ignores the rest on this line
+while (getline(cin, line)) // ...
+```
