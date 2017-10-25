@@ -202,6 +202,19 @@ Overload `<` operator to use `std::sort`.
 
 ```c++
 cin >> N;
-cin.ignore(); // ignores the rest on this line
+cin.ignore(); // ignores the rest of the line
 while (getline(cin, line)) // ...
 ```
+
+Don't forget to `cin.ignore()` before `getline()`.
+
+
+
+```c++
+#include <sstream>
+string line, word;
+istringsteam iss(line);
+while (iss >> word) // ...
+```
+
+Simple string tokenizer (only space).
