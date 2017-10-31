@@ -181,7 +181,7 @@ v.erase(v.begin() + 1, v.begin() + 4); // [1, 5]
 
 ```c++
 #include <algorithm>
-vector<int> v = {1, 2, 3, 4, 5}; // must be sorted to get all the permutations
+vector<int> v = {1, 2, 3, 4, 5}; // must be sorted to get all permutations
 do {
   // ...
 } while (next_permutation(v.begin(), v.end()));
