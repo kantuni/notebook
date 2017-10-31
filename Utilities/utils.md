@@ -120,7 +120,16 @@ char a = '3';
 int b = a - '0'; // b = 3
 ```
 
-Converts `char` to `int`
+Converts `char` to `int`.
+
+
+
+```c++
+int a = 5;
+char b = a + '0'; // b = '5'
+```
+
+Converts `char` to `int`.
 
 
 
