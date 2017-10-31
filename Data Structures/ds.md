@@ -7,8 +7,8 @@ Map
 #include <utility> // std::pair
 map<char, int> tree;
 tree['a'] = 100;
-// tree.insert( pair<char, int>('a', 100) );
-// tree.insert( make_pair('a', 100) );
+// tree.insert(pair<char, int>('a', 100));
+// tree.insert(make_pair('a', 100));
 ```
 
 
@@ -28,4 +28,3 @@ s.erase(s.find(2), s.find(4)); // {4, 5}
 s.count(element); // either 1 or 0
 s.find(element); // either an iterator to that element or s.end()
 ```
-
