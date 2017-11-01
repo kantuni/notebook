@@ -144,9 +144,9 @@ struct Graph {
     int to;
     int weight;
     
-    bool operator < (const Edge &a) const {
+    bool operator < (Edge e) const {
       // hack: invert sign
-      return weight >= a.weight;
+      return weight >= e.weight;
     }
   };
   
