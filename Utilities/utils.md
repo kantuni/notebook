@@ -235,3 +235,12 @@ ios_base::sync_with_stdio(false);
 ```
 
 Use this for large inputs. Don't use `cstdio` with it.
+
+
+
+```c++
+T hypot(T x, T y);
+T hypot(T x, T y, T z);
+```
+
+Computes the square root of the sum of the squares of x and y (and z), without undue overflow or underflow at intermediate stages of the computation.
