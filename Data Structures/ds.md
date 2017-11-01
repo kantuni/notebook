@@ -1,6 +1,6 @@
 # Data Structures
 
-Map
+### Map
 
 ```c++
 #include <map>
@@ -13,7 +13,7 @@ tree['a'] = 100;
 
 
 
-Set
+### Set
 
 ```c++
 set<int> s = {1, 2};
@@ -31,7 +31,7 @@ s.find(element); // either an iterator to that element or s.end()
 
 
 
-Priority Queue
+### Priority Queue
 
 ```c++
 priority_queue<int, vector<int>, greater<int> > pq; 
@@ -41,7 +41,7 @@ The third argument is comparator. Use `greater<int>` for min-heap.
 
 
 
-Union Find Disjoint Set
+### Union Find
 
 ```c++
 struct UnionFind {
