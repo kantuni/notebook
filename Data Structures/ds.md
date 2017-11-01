@@ -28,3 +28,13 @@ s.erase(s.find(2), s.find(4)); // {4, 5}
 s.count(element); // either 1 or 0
 s.find(element); // either an iterator to that element or s.end()
 ```
+
+
+
+Priority Queue
+
+```c++
+priority_queue<int, vector<int>, greater<int> > pq; 
+```
+
+The third argument is comparator. Use `greater<int>` for min-heap.

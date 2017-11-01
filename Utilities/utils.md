@@ -194,7 +194,7 @@ Rearranges the elements in the range `[first,last)` into the next *lexicographic
 const double EPS = 1e-7;
 struct Point {
   double x, y;
-  bool operator < (const Point& p) const {
+  bool operator < (const Point &p) const {
     // return true only for p1 < p2
     if (x < p.x - EPS) return true;
     if (x > p.x + EPS) return false;
