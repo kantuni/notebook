@@ -158,7 +158,7 @@ struct Graph {
   vector<Edge> edges;
   vvi cnn;
   
-  // MST stuff
+  // MST
   priority_queue<Edge> pq;
   vi taken;
   
