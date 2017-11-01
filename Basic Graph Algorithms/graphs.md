@@ -26,6 +26,8 @@ EdgeList.push_back(ii(w, ii(s, t)); // ->
 EdgeList.push_back(ii(w, ii(t, s)); // <-
 ```
 
+
+
 ### DFS using recursion
 
 ```c++
@@ -121,8 +123,8 @@ void dfsm(int u) {
 }
 
 for (int i = 0; i < 4; i++)
-    if (color[i] == UNVISITED)
-      dfs(i);
+  if (color[i] == UNVISITED)
+    dfs(i);
 
 reverse(all(ts));
 ```
