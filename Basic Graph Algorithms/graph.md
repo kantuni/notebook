@@ -3,9 +3,6 @@
 ### Representation
 
 ```c++
-#define UNVISITED -1
-#define VISITED 1
-
 struct Graph {
   struct Edge {
     int from;
@@ -15,11 +12,9 @@ struct Graph {
   
   vector<Edge> edges;
   vvi cnn;
-  vi color;
   
   Graph(int n) {
     cnn.assign(n, vi());
-    color.assign(n, UNVISITED);
   }
   
   void addEdge(int s, int t, int w) {
