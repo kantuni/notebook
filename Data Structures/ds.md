@@ -38,3 +38,35 @@ priority_queue<int, vector<int>, greater<int> > pq;
 ```
 
 The third argument is comparator. Use `greater<int>` for min-heap.
+
+
+
+Union Find Disjoint Set
+
+```c++
+struct UnionFind {
+  vector<int> parent, rank;
+  
+  UnionFind(int n) {
+    parent.assign(n, 0);
+    rank.assign(n, 0);
+    for (int i = 0; i < n; i++)
+      parent[i] = i;
+  }
+  
+  int find(int x) {
+    return (x == parent[x]) ? x : parent[x] = find(parent[x]);
+  }
+  
+  bool same(int x, int y) {
+    return find(x) == find(y);
+  }
+  
+  void merge(int x, int y) {
+    x = find(x); y = find(y);
+    if (rank[x] > rank[y]) parent[y] = x;
+    else parent[x] = y;
+    if (rank[x] == rank[y]) rank[y]++;
+  }
+};
+```
