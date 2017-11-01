@@ -158,10 +158,6 @@ struct Graph {
   vector<Edge> edges;
   vvi cnn;
   
-  // MST
-  priority_queue<Edge> pq;
-  vi taken;
-  
   Graph(int n) {
     cnn.assign(n, vi());
     taken.assign(n, 0);
@@ -173,6 +169,10 @@ struct Graph {
     cnn[t].push_back(edges.size());
     edges.push_back({t, s, w});
   }
+  
+  // MST
+  priority_queue<Edge> pq;
+  vi taken;
   
   void process(int u) {
     taken[u] = 1;
