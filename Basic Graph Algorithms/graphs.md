@@ -1,47 +1,56 @@
 # Basic Graph Algorithms
 
-### Representations
-
-Adjacency matrix
+### Representation
 
 ```c++
-vvi AdjMatrix(V, vi(V));
-AdjMatrix[s][t] = 1; // ->
-AdjMatrix[t][s] = 1; // <-
+#define UNVISITED -1
+#define VISITED 1
+
+struct Graph {
+  struct Edge {
+    int from;
+    int to;
+    int weight;
+  };
+  
+  vector<Edge> edges;
+  vvi cnn;
+  vi color;
+  
+  Graph(int n) {
+    cnn.assign(n, vi());
+    color.assign(n, UNVISITED);
+  }
+  
+  void addEdge(int s, int t, int w) {
+    cnn[s].push_back(edges.size());
+    edges.push_back({s, t, w});
+    // cnn[t].push_back(edges.size());
+    // edges.push_back({t, s, w});
+  }
+};
+
+int main() {
+  Graph g(4);
+  g.addEdge(0, 1, 1);
+  g.addEdge(0, 2, 1);
+  g.addEdge(1, 2, 1);
+  g.addEdge(2, 0, 1);
+  g.addEdge(2, 3, 1);
+  g.addEdge(3, 3, 1);
+  return 0;
+}
 ```
-
-Adjacency list
-
-```c++
-vvii AdjList(V);
-AdjList[s].push_back(ii(w1, t)); // ->
-AdjList[t].push_back(ii(w2, s)); // <-
-```
-
-Edge list
-
-```c++
-vii EdgeList;
-EdgeList.push_back(ii(w, ii(s, t)); // ->
-EdgeList.push_back(ii(w, ii(t, s)); // <-
-```
-
-
 
 ### DFS using recursion
 
 ```c++
-const int UNVISITED = -1;
-const int VISITED = 1;
-vvii AdjList(V);
-vi color(V, UNVISITED);
-
-void dfs(int u) {
+void Graph::DFS(int u) {
   color[u] = VISITED;
-  for (int j = 0; j < AdjList[u].size(); j++) {
-    ii v = AdjList[u][j];
-    if (color[v.second] == UNVISITED)
-      dfs(v.second);
+  for (auto ie: cnn[u]) {
+    int v = edges[ie].to;
+    if (color[v] == UNVISITED)
+      DFS(v);
   }
 }
 ```
@@ -49,24 +58,25 @@ void dfs(int u) {
 ### DFS using stack
 
 ```c++
-const int UNVISITED = -1;
-const int VISITED = 1;
-vvii AdjList(V);
-vi color(V, UNVISITED);
-stack<int> s;
+void Graph::DFS(int u) {
+  stack<int> s;
+  color[u] = VISITED;
+  s.push(u);
 
-void dfs(int u) {
-  color[u] = VISITED; s.push(u);
   while (!s.empty()) {
-    bool adj = false;
-    for (int j = 0; j < AdjList[u].size(); j++) {
-      ii v = AdjList[u][j];
-      if (color[v.second] == UNVISITED) {
-        color[v.second] = VISITED; s.push(v.second);
-        adj = true; break;
+    bool found = false;
+    for (auto ie: cnn[s.top()]) {
+      int v = edges[ie].to;
+      if (color[v] == UNVISITED) {
+        found = true;
+        color[v] = VISITED;
+        s.push(v);
+        break;
       }
     }
-    if (!adj) s.pop();
+    if (!found) {
+      s.pop();
+    }
   }
 }
 ```
@@ -74,20 +84,18 @@ void dfs(int u) {
 ### BFS
 
 ```c++
-const int UNVISITED = -1;
-const int VISITED = 1;
-vvii AdjList(V);
-vi color(V, UNVISITED);
-queue<int> q;
+void Graph::BFS(int u) {
+  queue<int> q;
+  color[u] = VISITED;
+  q.push(u);
 
-void bfs(int u) {
-  color[u] = VISITED; q.push(u);
   while (!q.empty()) {
     int front = q.front(); q.pop();
-    for (int j = 0; j < AdjList[front].size(); j++) {
-      ii v = AdjList[front][j];
-      if (color[v.second] == UNVISITED) {
-        color[v.second] = VISITED; q.push(v.second);
+    for (auto ie: cnn[front]) {
+      int v = edges[ie].to;
+      if (color[v] == UNVISITED) {
+        color[v] = VISITED;
+        q.push(v);
       }
     }
   }
@@ -100,7 +108,7 @@ void bfs(int u) {
 int numCC = 0;
 for (int i = 0; i < V; i++) {
   if (color[i] == UNVISITED) {
-    dfs(i);
+    g.DFS(i);
     numCC++;
   }
 }
@@ -109,23 +117,22 @@ for (int i = 0; i < V; i++) {
 ### Topological Sort (Directed Acyclic Graph)
 
 ```c++
-vi ts;
-void dfsm(int u) {
+void Graph::DFSM(int u) {
   color[u] = VISITED;
-  for (int j = 0; j < AdjList[u].size(); j++) {
-    ii v = AdjList[u][j];
-    if (color[v.second] == UNVISITED) {
-      color[v.second] = VISITED;
-      dfs(v.second);
-    }
+  for (auto ie: cnn[u]) {
+    int v = edges[ie].to;
+    if (color[v] == UNVISITED)
+      DFSM(v);
   }
   ts.push_back(u);
 }
 
-for (int i = 0; i < 4; i++)
-  if (color[i] == UNVISITED)
-    dfs(i);
-
-reverse(all(ts));
+vi Graph::TS() {
+  for (int i = 0; i < cnn.size(); i++)
+    if (color[i] == UNVISITED)
+      DFSM(i);
+  reverse(ts.begin(), ts.end());
+  return ts;
+}
 ```
 
