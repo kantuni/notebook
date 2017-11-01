@@ -227,3 +227,11 @@ while (iss >> word) // ...
 ```
 
 Simple string tokenizer (only space).
+
+
+
+```c++
+ios_base::sync_with_stdio(false);
+```
+
+Use this for large inputs. Don't use `cstdio` with it.
