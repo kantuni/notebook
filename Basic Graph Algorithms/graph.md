@@ -31,13 +31,13 @@ struct Graph {
 };
 
 int main() {
-  Graph g(4);
-  g.addEdge(0, 1, 1);
-  g.addEdge(0, 2, 1);
-  g.addEdge(1, 2, 1);
-  g.addEdge(2, 0, 1);
-  g.addEdge(2, 3, 1);
-  g.addEdge(3, 3, 1);
+  Graph G(4);
+  G.addEdge(0, 1, 1);
+  G.addEdge(0, 2, 1);
+  G.addEdge(1, 2, 1);
+  G.addEdge(2, 0, 1);
+  G.addEdge(2, 3, 1);
+  G.addEdge(3, 3, 1);
   return 0;
 }
 ```
