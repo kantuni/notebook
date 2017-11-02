@@ -1,4 +1,4 @@
-# Basic Graph Algorithms
+# Graph Algorithms
 
 ### Representation
 
@@ -133,7 +133,7 @@ vi Graph::TS() {
 
 
 
-# Minimum Spanning Trees
+## Minimum Spanning Tree
 
 ### Prim's Algorithm
 
@@ -146,7 +146,7 @@ struct Graph {
     
     bool operator < (Edge e) const {
       // hack: invert sign
-      return weight >= e.weight;
+      return weight > e.weight;
     }
   };
   
@@ -260,6 +260,63 @@ struct Graph {
       }
     }
     return mstc;
+  }
+};
+```
+
+## SSSP on Weighted Graph
+
+### Dijkstra's Algorithm
+
+```c++
+struct Graph {
+  struct Edge {
+    int from;
+    int to;
+    int weight;
+    
+    bool operator < (Edge e) const {
+      // hack: invert sign
+      return weight > e.weight;
+    }
+  };
+  
+  vector<Edge> edges;
+  vvi cnn;
+  
+  // Dijkstra
+  vi dist;
+  
+  Graph(int n) {
+    cnn.assign(n, vi());
+    dist.assign(n, INF);
+  }
+  
+  void addEdge(int s, int t, int w) {
+    cnn[s].push_back(edges.size());
+    edges.push_back({s, t, w});
+  }
+  
+  void Dijkstra(int s) {
+    priority_queue<Edge> pq;
+    dist[s] = 0;
+    pq.push({s, s, 0});
+    
+    while (!pq.empty()) {
+      Edge top = pq.top(); pq.pop();
+      int u = top.to;
+      int d = top.weight;
+      
+      if (d > dist[u]) continue;
+      for (auto ie: cnn[u]) {
+        int v = edges[ie].to;
+        int w = edges[ie].weight;
+        if (dist[v] > dist[u] + w) {
+          dist[v] = dist[u] + w;
+          pq.push({u, v, dist[v]});
+        }
+      }
+    }
   }
 };
 ```
