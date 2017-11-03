@@ -245,3 +245,14 @@ T hypot(T x, T y, T z);
 ```
 
 Computes the square root of the sum of the squares of x and y (and z), without undue overflow or underflow at intermediate stages of the computation.
+
+
+
+```c++
+double a = 0.12345;
+stringstream stream;
+stream << fixed << setprecision(3) << a;
+string s = stream.str(); // "0.123"
+```
+
+Converts the floating point number to string with the given precision.
