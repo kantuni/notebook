@@ -250,7 +250,7 @@ Computes the square root of the sum of the squares of x and y (and z), without u
 
 ```c++
 double a = 0.12345;
-stringstream stream;
+ostringstream stream;
 stream << fixed << setprecision(3) << a;
 string s = stream.str(); // "0.123"
 ```
