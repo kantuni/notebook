@@ -256,3 +256,13 @@ string s = stream.str(); // "0.123"
 ```
 
 Converts the floating point number to string with the given precision.
+
+
+
+```c++
+char c = 'a';
+string cs = string(1, c); // "a"
+```
+
+Converts `char` to a `string`.
+
