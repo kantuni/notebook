@@ -307,6 +307,8 @@ void BellmanFord(int s) {
         int v = edges[ie].to;
         dist[v] = min(dist[v], dist[j] + edges[ie].weight);
       }
+    }
+  }
 }
 ```
 
