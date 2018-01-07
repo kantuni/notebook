@@ -129,7 +129,7 @@ int a = 5;
 char b = a + '0'; // b = '5'
 ```
 
-Converts `char` to `int`.
+Converts `int` to `char`.
 
 
 
