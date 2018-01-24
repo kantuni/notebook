@@ -266,3 +266,16 @@ string cs = string(1, c); // "a"
 
 Converts `char` to a `string`.
 
+
+
+```c++
+string s = "a,b,c";
+stringstream ss(s);
+vector<string> tokens;
+string token;
+while (getline(ss, token, ',')) {
+  tokens.push_back(token); // ["a", "b", "c"]
+}
+```
+
+This method is used to **split** a **string** into an array of substrings. (by a given delimiter)
