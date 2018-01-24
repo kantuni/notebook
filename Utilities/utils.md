@@ -13,7 +13,7 @@ fill(v.begin(), v.end(), 0); // [0, 0, 0, 0, 0]
 
 
 
-C++11 `to_string()` polyfill 
+C++11 `to_string()` polyfill
 
 ```c++
 #include <sstream>
