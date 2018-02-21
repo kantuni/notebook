@@ -282,7 +282,6 @@ This method is used to **split** a **string** into an array of substrings. (by a
 
 
 ```c++
-#include <string>
 #include <algorithm>
 
 string s = "Abc";
