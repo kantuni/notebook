@@ -279,3 +279,15 @@ while (getline(ss, token, ',')) {
 ```
 
 This method is used to **split** a **string** into an array of substrings. (by a given delimiter)
+
+
+```c++
+#include <string>
+#include <algorithm>
+
+string s = "Abc";
+transform(s.begin(), s.end(), s.begin(), ::tolower); // abc
+transform(s.begin(), s.end(), s.begin(), ::toupper);
+```
+
+Converts a string to lowercase / uppercase letters.
