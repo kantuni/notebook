@@ -290,3 +290,12 @@ transform(s.begin(), s.end(), s.begin(), ::toupper); // ABC
 ```
 
 Converts a string to lowercase / uppercase letters.
+
+```c++
+#include <string>
+
+string s = "Hello, world";
+cout << s.find("el"); // 1, if not found returns string::npos
+```
+
+Finds the first appereance of the given substring.
