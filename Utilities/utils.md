@@ -286,7 +286,7 @@ This method is used to **split** a **string** into an array of substrings. (by a
 
 string s = "Abc";
 transform(s.begin(), s.end(), s.begin(), ::tolower); // abc
-transform(s.begin(), s.end(), s.begin(), ::toupper);
+transform(s.begin(), s.end(), s.begin(), ::toupper); // ABC
 ```
 
 Converts a string to lowercase / uppercase letters.
