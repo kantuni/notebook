@@ -295,7 +295,8 @@ Converts a string to lowercase / uppercase letters.
 #include <string>
 
 string s = "Hello, world";
-cout << s.find("el"); // 1, if not found returns string::npos
+s.find("el"); // 1
+s.find("aaa"); // string::npos
 ```
 
 Finds the first appereance of the given substring.
