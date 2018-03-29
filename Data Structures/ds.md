@@ -7,8 +7,8 @@
 #include <utility> // std::pair
 map<char, int> tree;
 tree['a'] = 100;
-// tree.insert(pair<char, int>('a', 100));
-// tree.insert(make_pair('a', 100));
+tree.insert(pair<char, int>('b', 100));
+tree.insert(make_pair('b', 100));
 ```
 
 
