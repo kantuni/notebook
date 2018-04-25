@@ -294,7 +294,7 @@ Converts a string to lowercase / uppercase letters.
 ```c++
 #include <string>
 
-string s = "Hello, world";
+string s = "hello, world";
 s.find("el"); // 1
 s.find("aaa"); // string::npos
 ```
