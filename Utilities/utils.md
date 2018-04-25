@@ -300,3 +300,14 @@ s.find("aaa"); // string::npos
 ```
 
 Finds the first appereance of the given substring.
+
+```c++
+#include <string>
+
+string s = "abc";
+int pos = 2;
+int count = 1;
+s.replace(pos, count, "cd"); // abcd
+```
+
+Replaces the part of the string indicated by `[pos, pos + count)`.
