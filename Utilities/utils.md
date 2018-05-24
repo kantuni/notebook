@@ -106,9 +106,7 @@ reverse(a.begin(), a.end()); // a = cba321
 
 ```c++
 #include <vector>
-typedef vector<int> vi;
-typedef vector<vi> vvi;
-vvi G(n, vi(m, 0));
+vector<vector<int>> G(n, vector<int>(m, 0));
 ```
 
 Creates an `n x m` matrix with all 0s.
