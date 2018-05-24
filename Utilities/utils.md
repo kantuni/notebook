@@ -311,3 +311,13 @@ s.replace(pos, count, "cd"); // abcd
 ```
 
 Replaces the part of the string indicated by `[pos, pos + count)`.
+
+```c++
+#include <vector>
+#include <iterator>
+
+vector<int> v = {1, 2, 3};
+auto a = v.begin();   // *a = 1
+auto b = next(a, 2);  // *b = 3
+```
+Returns the nth successor of the given iterator.
