@@ -317,7 +317,8 @@ Replaces the part of the string indicated by `[pos, pos + count)`.
 #include <iterator>
 
 vector<int> v = {1, 2, 3};
-auto a = v.begin();   // *a = 1
-auto b = next(a, 2);  // *b = 3
+int n = 2;
+auto it = v.begin();    // points at 1
+auto nx = next(it, n);  // points at 3
 ```
-Returns the nth successor of the given iterator.
+Returns the nth successor of iterator it.
