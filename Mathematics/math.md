@@ -1,12 +1,13 @@
 # Mathematics
 
-GCD (Euclidean Algorithm)
+Euclidean Algorithm
 
 ```c++
 int gcd(int a, int b) {
   return b == 0 ? a : gcd(b, a % b);
 }
 ```
+
 
 Sieve of Eratosthenes
 
@@ -22,7 +23,6 @@ for (int i = 2; i * i <= MAX; i++) {
   }
 }
 ```
-
 
 
 Operations on sets
