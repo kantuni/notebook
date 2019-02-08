@@ -230,7 +230,8 @@ Simple string tokenizer (only space).
 
 
 ```c++
-ios_base::sync_with_stdio(false);
+ios::sync_with_stdio(false);
+cin.tie(0);
 ```
 
 Use this for large inputs. Don't use `cstdio` with it.
