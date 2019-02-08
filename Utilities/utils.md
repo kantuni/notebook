@@ -4,7 +4,7 @@
 void fill (ForwardIterator first, ForwardIterator last, const T& val);
 ```
 
-Assigns `val` to all the elements in the range `[first,last)`.
+Assigns `val` to all the elements in the range `[first, last)`.
 
 ```c++
 vector<int> v = {1, 2, 3, 4, 5};
@@ -94,7 +94,7 @@ foo.second = 2;
 void reverse (BidirectionalIterator first, BidirectionalIterator last);
 ```
 
-Reverses the order of the elements in the range `[first,last)`.
+Reverses the order of the elements in the range `[first, last)`.
 
 ``` c++
 #include <algorithm> // std::reverse
@@ -165,7 +165,7 @@ iterator erase (iterator position);
 iterator erase (iterator first, iterator last);
 ```
 
-Removes from the vector either a single element (*position*) or a range of elements (`[first,last)`).
+Removes from the vector either a single element (*position*) or a range of elements (`[first, last)`).
 
 ```c++
 vector<int> v = {1, 2, 3, 4, 5};
@@ -185,7 +185,7 @@ do {
 } while (next_permutation(v.begin(), v.end()));
 ```
 
-Rearranges the elements in the range `[first,last)` into the next *lexicographically greater* permutation.
+Rearranges the elements in the range `[first, last)` into the next *lexicographically greater* permutation.
 
 
 ```c++
@@ -320,3 +320,18 @@ auto it = v.begin();    // points at 1
 auto nx = next(it, n);  // points at 3
 ```
 Returns the nth successor of iterator it.
+
+
+```c++
+void rotate(ForwardIterator first, ForwardIterator middle, ForwardIterator last)
+```
+Rotates the order of the elements in the range `[first, last)`, in such a way that the element pointed by `middle` becomes the new first element.
+
+```c++
+#include <vector>
+#include <algorithm>
+
+vector<int> a = {1, 2, 3};
+rotate(a.begin(), a.begin() + 2, a.end());              // [3, 1, 2] rotate left 2 times
+rotate(a.begin(), a.begin() + a.size() - 2, a.end());   // [2, 3, 1] rotate right 2 times
+```
