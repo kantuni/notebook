@@ -337,10 +337,10 @@ rotate(a.begin(), a.begin() + 2, a.end());              // [3, 1, 2] rotate left
 rotate(a.begin(), a.begin() + a.size() - 2, a.end());   // [2, 3, 1] rotate right 2 times
 ```
 
+Count appearances of value in range
 ```c++
 int count (InputIterator first, InputIterator last, const T& val);
 ```
-Count appearances of value in range
 
 ```c++
 #include <vector>
