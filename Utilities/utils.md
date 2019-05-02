@@ -336,3 +336,16 @@ vector<int> a = {1, 2, 3};
 rotate(a.begin(), a.begin() + 2, a.end());              // [3, 1, 2] rotate left 2 times
 rotate(a.begin(), a.begin() + a.size() - 2, a.end());   // [2, 3, 1] rotate right 2 times
 ```
+
+```c++
+int count (InputIterator first, InputIterator last, const T& val);
+```
+Count appearances of value in range
+
+```c++
+#include <vector>
+#include <algorithm>
+
+vector<int> a = {1, 1, 1};
+int ans = count(a.begin(), a.end(), 1); // 3
+```
