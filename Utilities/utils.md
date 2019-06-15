@@ -349,3 +349,9 @@ int count (InputIterator first, InputIterator last, const T& val);
 vector<int> a = {1, 1, 1};
 int ans = count(a.begin(), a.end(), 1); // 3
 ```
+
+Fill 2d array with value
+```c++
+int a[m][n];
+memset(a, 0, sizeof a);
+```
