@@ -335,6 +335,7 @@ Rotates the order of the elements in the range `[first, last)`, in such a way th
 vector<int> a = {1, 2, 3};
 rotate(a.begin(), a.begin() + 2, a.end());              // [3, 1, 2] rotate left 2 times
 rotate(a.begin(), a.begin() + a.size() - 2, a.end());   // [2, 3, 1] rotate right 2 times
+rotate(a.rbegin(), a.rbegin() + 2, a.rend());           // [2, 3, 1] rotate right 2 times (using reverse iterators)
 ```
 
 Count appearances of value in range
