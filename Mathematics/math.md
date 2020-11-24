@@ -16,7 +16,9 @@ vector<int> sieve(int n) {
   vector<int> p(n + 1, 1);
   p[0] = p[1] = 0;
   for (int i = 2; i * i < p.size(); i++) {
-    if (p[i] == 0) continue;
+    if (p[i] == 0) {
+      continue;
+    }
     for (int j = 0; i * i + i * j < p.size(); j++) {
       p[i * i + i * j] = 0;
     }
