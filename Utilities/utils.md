@@ -355,4 +355,6 @@ Fill 2d array with value
 ```c++
 int a[m][n];
 memset(a, 0, sizeof a);
+memset(a, -1, sizeof a);
+memset(a, 0x3f, sizeof a);
 ```
