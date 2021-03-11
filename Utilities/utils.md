@@ -358,3 +358,15 @@ memset(a, 0, sizeof a);
 memset(a, -1, sizeof a);
 memset(a, 0x3f, sizeof a);
 ```
+
+Replace all strings `a` with string `b` in string `s`.
+```c++
+string replaceAll(string s, string a, string b) {
+  auto pos = s.find(a);
+  while (pos != string::npos) {
+    s.replace(pos, a.size(), b);
+    pos = s.find(a, pos + b.size());
+  }
+  return s;
+}
+```
