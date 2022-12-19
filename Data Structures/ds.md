@@ -41,13 +41,13 @@ The third argument is comparator. Use `greater<int>` for min-heap.
 
 
 
-### Union Find
+### Disjoint Set
 
 ```c++
-struct UnionFind {
+struct DisjointSet {
   vector<int> parent, rank;
   
-  UnionFind(int n) {
+  DisjointSet(int n) {
     parent.assign(n, 0);
     rank.assign(n, 0);
     iota(parent.begin(), parent.end(), 0);
